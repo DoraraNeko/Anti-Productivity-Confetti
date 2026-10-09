@@ -31,8 +31,6 @@ MSBuild APC.vcxproj /t:Rebuild /p:Configuration=Release /p:Platform=x64
 
 Output: `bin\x64\Release\APC.exe`. Create a release archive and SHA-256 checksum with `powershell -ExecutionPolicy Bypass -File scripts\package.ps1`.
 
-Release notes: [APC v1.0.0](release-notes-APC-v1.0.0.md).
-
 ## License
 
-[MIT License](LICENSE). See [CHANGELOG.md](CHANGELOG.md) for release notes.
+[MIT License](LICENSE).

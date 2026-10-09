@@ -26,10 +26,12 @@ Edit `settings.ini` beside the executable. If it is missing, the application cre
 | Confetti | RainIntervalMs | 50 | 20–1000 | Interval between falling pieces in milliseconds; lower values produce more confetti |
 | Confetti | PiecesPerCracker | 55 | 1–200 | Pieces launched by each cracker per input event |
 | Confetti | CrackerVisibleMs | 1000 | 100–2000 | How long the crackers remain visible after input; each input extends the display time |
-| Confetti | CrackerStyle | 3 | 1–3 | Initial cracker design: 1=Paper cone, 2=Foil tube, 3=Pop/spring |
+| Confetti | CrackerStyle | PopSpring | PaperCone / FoilTube / PopSpring | Initial cracker design |
 | Confetti | MaxConfetti | 10000 | 50–20000 | Maximum number of live pieces |
 
 Cracker concepts: [comparison sheet](../docs/cracker-designs/cracker-design-samples.png) ([paper cone](../docs/cracker-designs/01-paper-cone.png) / [foil tube](../docs/cracker-designs/02-foil-tube.png) / [pop / spring](../docs/cracker-designs/03-pop-spring.png)).
+
+`CrackerStyle` accepts `PaperCone`, `FoilTube`, or `PopSpring`. For compatibility with older settings files, `1`, `2`, and `3` are also accepted in the same order.
 
 ## Build
 

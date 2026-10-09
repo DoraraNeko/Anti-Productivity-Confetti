@@ -28,10 +28,12 @@
 | Confetti | RainIntervalMs | 50 | 20〜1000 | 上から降る紙片の出現間隔（ミリ秒）。小さいほど多くなります |
 | Confetti | PiecesPerCracker | 55 | 1〜200 | 入力1回あたり、クラッカー1個から発射する紙片の数 |
 | Confetti | CrackerVisibleMs | 1000 | 100〜2000 | クラッカーの表示時間（ミリ秒）。入力があるたびに表示時間を延長します |
-| Confetti | CrackerStyle | 3 | 1〜3 | 起動時のクラッカーデザイン。1=紙コーン、2=箔巻きチューブ、3=ポップ・スプリング |
+| Confetti | CrackerStyle | PopSpring | PaperCone / FoilTube / PopSpring | 起動時のデザイン（紙コーン／箔巻きチューブ／ポップ・スプリング） |
 | Confetti | MaxConfetti | 10000 | 50〜20000 | 画面上に同時に存在できる紙片の最大数 |
 
 クラッカーのデザイン案: [3案の比較画像](../docs/cracker-designs/cracker-design-samples.png)（[紙コーン](../docs/cracker-designs/01-paper-cone.png) / [箔巻きチューブ](../docs/cracker-designs/02-foil-tube.png) / [ポップ・スプリング](../docs/cracker-designs/03-pop-spring.png)）
+
+`CrackerStyle` は `PaperCone`、`FoilTube`、`PopSpring` のいずれかを指定します。旧設定との互換性のため、`1`、`2`、`3` もそれぞれ同じ順番で指定できます。
 
 ## ビルド
 

@@ -34,8 +34,10 @@ Windows デスクトップ上にカラフルな紙吹雪を継続して表示し
 | Confetti | RainIntervalMs | 50 | 20〜1000 ミリ秒 |
 | Confetti | PiecesPerCracker | 55 | 1〜200 個 |
 | Confetti | CrackerVisibleMs | 1000 | 100〜2000 ミリ秒 |
-| Confetti | CrackerStyle | 3 | 1〜3（1=紙コーン、2=箔巻きチューブ、3=ポップ・スプリング） |
+| Confetti | CrackerStyle | PopSpring | PaperCone / FoilTube / PopSpring |
 | Confetti | MaxConfetti | 10000 | 50〜20000 個 |
+
+`CrackerStyle` は `PaperCone`（紙コーン）、`FoilTube`（箔巻きチューブ）、`PopSpring`（ポップ／スプリング）を指定する。旧設定との互換性のため、`1`、`2`、`3` も同じ順番で使用できる。
 
 ### 3.3 実装
 

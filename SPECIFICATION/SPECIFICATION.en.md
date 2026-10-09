@@ -34,8 +34,10 @@ Read `settings.ini` beside the executable at startup, creating it with defaults 
 | Confetti | RainIntervalMs | 50 | 20–1000 milliseconds |
 | Confetti | PiecesPerCracker | 55 | 1–200 pieces |
 | Confetti | CrackerVisibleMs | 1000 | 100–2000 milliseconds |
-| Confetti | CrackerStyle | 3 | 1–3 (paper cone, foil tube, pop/spring) |
+| Confetti | CrackerStyle | PopSpring | PaperCone / FoilTube / PopSpring |
 | Confetti | MaxConfetti | 10000 | 50–20000 pieces |
+
+`CrackerStyle` accepts `PaperCone`, `FoilTube`, or `PopSpring`. For compatibility with older settings files, `1`, `2`, and `3` are also accepted in the same order.
 
 ### 3.3 Implementation
 

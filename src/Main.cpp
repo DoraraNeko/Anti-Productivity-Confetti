@@ -144,6 +144,35 @@ namespace
         return true;
     }
 
+    bool ReadCrackerStyleSetting(UINT defaultValue, UINT& result)
+    {
+        wchar_t value[64]{};
+        GetPrivateProfileStringW(L"Confetti", L"CrackerStyle", L"", value, ARRAYSIZE(value), gSettingsPath.c_str());
+        if (value[0] == L'\0')
+        {
+            result = defaultValue;
+            return true;
+        }
+        if (_wcsicmp(value, L"PaperCone") == 0 || wcscmp(value, L"1") == 0)
+        {
+            result = 1;
+            return true;
+        }
+        if (_wcsicmp(value, L"FoilTube") == 0 || wcscmp(value, L"2") == 0)
+        {
+            result = 2;
+            return true;
+        }
+        if (_wcsicmp(value, L"PopSpring") == 0 || _wcsicmp(value, L"Pop/Spring") == 0 ||
+            wcscmp(value, L"3") == 0)
+        {
+            result = 3;
+            return true;
+        }
+        result = defaultValue;
+        return false;
+    }
+
     void LoadSettings()
     {
         if (gSettingsPath.empty())
@@ -156,8 +185,7 @@ namespace
         const bool validBurstCount = ReadBoundedSetting(L"PiecesPerCracker", loaded.piecesPerCracker, 1, 200, loaded.piecesPerCracker);
         const bool validCrackerDuration = ReadBoundedSetting(
             L"CrackerVisibleMs", loaded.crackerVisibleMs, 100, 2000, loaded.crackerVisibleMs);
-        const bool validCrackerStyle = ReadBoundedSetting(
-            L"CrackerStyle", loaded.crackerStyle, 1, 3, loaded.crackerStyle);
+        const bool validCrackerStyle = ReadCrackerStyleSetting(loaded.crackerStyle, loaded.crackerStyle);
         const bool validMaxConfetti = ReadBoundedSetting(L"MaxConfetti", maxConfetti, 50, 20000, maxConfetti);
         loaded.maxConfetti = maxConfetti;
         gSettings = loaded;
@@ -192,8 +220,8 @@ namespace
             L"PiecesPerCracker=55\r\n"
             L"; How long cracker illustrations stay visible after input in milliseconds (100-2000)\r\n"
             L"CrackerVisibleMs=1000\r\n"
-            L"; Initial cracker design: 1=Paper cone, 2=Foil tube, 3=Pop/spring (1-3)\r\n"
-            L"CrackerStyle=3\r\n"
+            L"; Cracker design: PaperCone, FoilTube, or PopSpring\r\n"
+            L"CrackerStyle=PopSpring\r\n"
             L"; Maximum live pieces (50-20000)\r\n"
             L"MaxConfetti=10000\r\n";
         DWORD written = 0;
